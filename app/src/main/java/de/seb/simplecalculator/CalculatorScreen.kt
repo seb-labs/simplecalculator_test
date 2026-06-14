@@ -102,15 +102,15 @@ private fun DisplayCard(
         Box(
             modifier = Modifier
                 .fillMaxWidth()
-                .height(180.dp)
-                .padding(24.dp),
+                .height(150.dp)
+                .padding(horizontal = 24.dp, vertical = 20.dp),
         ) {
             Column(
                 modifier = Modifier
-                    .align(Alignment.BottomEnd)
+                    .align(Alignment.CenterEnd)
                     .fillMaxWidth(),
                 horizontalAlignment = Alignment.End,
-                verticalArrangement = Arrangement.Bottom,
+                verticalArrangement = Arrangement.Center,
             ) {
                 Text(
                     text = if (expression.isBlank()) " " else expression,
@@ -120,7 +120,7 @@ private fun DisplayCard(
                     overflow = TextOverflow.Ellipsis,
                     textAlign = TextAlign.End,
                 )
-                Spacer(modifier = Modifier.height(10.dp))
+                Spacer(modifier = Modifier.height(6.dp))
                 Text(
                     text = display,
                     style = MaterialTheme.typography.displaySmall,
