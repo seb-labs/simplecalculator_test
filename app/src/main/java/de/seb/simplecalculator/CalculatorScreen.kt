@@ -105,32 +105,27 @@ private fun DisplayCard(
                 .fillMaxWidth()
                 .height(120.dp)
                 .padding(horizontal = 24.dp, vertical = 16.dp),
-            contentAlignment = Alignment.CenterEnd,
         ) {
-            Column(
-                horizontalAlignment = Alignment.End,
-                verticalArrangement = Arrangement.Center,
-            ) {
-                if (expression.isNotBlank()) {
-                    Text(
-                        text = expression,
-                        style = MaterialTheme.typography.bodySmall,
-                        color = MaterialTheme.colorScheme.onSurfaceVariant,
-                        maxLines = 1,
-                        overflow = TextOverflow.Ellipsis,
-                        textAlign = TextAlign.End,
-                    )
-                    Spacer(modifier = Modifier.height(6.dp))
-                }
+            if (expression.isNotBlank()) {
                 Text(
-                    text = display,
-                    style = MaterialTheme.typography.headlineLarge.copy(fontWeight = FontWeight.Bold),
-                    color = if (error) MaterialTheme.colorScheme.error else MaterialTheme.colorScheme.onSurface,
+                    text = expression,
+                    modifier = Modifier.align(Alignment.TopEnd),
+                    style = MaterialTheme.typography.bodySmall,
+                    color = MaterialTheme.colorScheme.onSurfaceVariant,
                     maxLines = 1,
                     overflow = TextOverflow.Ellipsis,
                     textAlign = TextAlign.End,
                 )
             }
+            Text(
+                text = display,
+                modifier = Modifier.align(Alignment.Center),
+                style = MaterialTheme.typography.headlineLarge.copy(fontWeight = FontWeight.Bold),
+                color = if (error) MaterialTheme.colorScheme.error else MaterialTheme.colorScheme.onSurface,
+                maxLines = 1,
+                overflow = TextOverflow.Ellipsis,
+                textAlign = TextAlign.Center,
+            )
         }
     }
 }
