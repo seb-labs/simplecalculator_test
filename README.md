@@ -16,6 +16,10 @@ A small, privacy-friendly Android calculator built with Kotlin and Jetpack Compo
 The debug APK will be created at:
 `app/build/outputs/apk/debug/app-debug.apk`
 
+## Ready-made APK
+A copy of the current APK is also kept in the repo here:
+`APK/simplecalculator-debug.apk`
+
 ## Install
 - Copy the APK to your phone and install it manually.
 - Or use `adb install -r app/build/outputs/apk/debug/app-debug.apk`.
