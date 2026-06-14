@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="purple_80">#D0BCFF</color>
+    <color name="purple_40">#6750A4</color>
+    <color name="mint_80">#93E7D2</color>
+    <color name="mint_40">#2A8E7F</color>
+    <color name="surface_dark">#121212</color>
+    <color name="surface_light">#F7F8FC</color>
+    <color name="calculator_bg">#EEF3FA</color>
+    <color name="calculator_bg_dark">#121826</color>
+    <color name="calculator_primary">#3A6FF7</color>
+    <color name="calculator_primary_dark">#7BA2FF</color>
+    <color name="calculator_accent">#28BFA3</color>
+    <color name="calculator_accent_dark">#44D6BA</color>
+    <color name="ic_launcher_background">#EAF0FF</color>
+</resources>
