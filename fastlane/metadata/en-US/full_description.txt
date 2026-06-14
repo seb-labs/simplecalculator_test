@@ -1,9 +1,11 @@
-Simple Calculator is a tiny Android calculator built with Kotlin and Jetpack Compose.
+Simple Calculator is a small Android calculator built with Kotlin and Jetpack Compose.
 
-It focuses on the essentials:
-- addition, subtraction, multiplication, division
-- offline operation only
-- no tracking, ads, or Google Play services
-- a clean and readable interface
+It is designed for quick everyday use and keeps the interface clean and easy to read.
 
-This project is intended to stay easy to build from source and suitable for F-Droid-style publication.
+Features:
+- addition, subtraction, multiplication, and division
+- offline-only operation
+- no ads, tracking, or Google Play services
+- simple, modern Compose UI
+
+The app is intended to stay easy to build from source and suitable for F-Droid-style publication.

@@ -1,1 +1,1 @@
-Minimal Android calculator with a clean offline UI.
+A clean, offline calculator for quick everyday arithmetic.
