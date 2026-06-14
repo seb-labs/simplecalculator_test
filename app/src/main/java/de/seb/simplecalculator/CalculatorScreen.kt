@@ -39,6 +39,7 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.unit.dp
@@ -96,40 +97,37 @@ private fun DisplayCard(
             .padding(top = 8.dp),
         shape = RoundedCornerShape(32.dp),
         colors = CardDefaults.elevatedCardColors(
-            containerColor = MaterialTheme.colorScheme.surfaceVariant.copy(alpha = 0.55f),
+            containerColor = MaterialTheme.colorScheme.surfaceVariant.copy(alpha = 0.72f),
         ),
     ) {
-        Box(
+        Column(
             modifier = Modifier
                 .fillMaxWidth()
-                .height(150.dp)
-                .padding(horizontal = 24.dp, vertical = 20.dp),
+                .height(140.dp)
+                .padding(horizontal = 24.dp, vertical = 18.dp),
+            horizontalAlignment = Alignment.End,
+            verticalArrangement = Arrangement.Center,
         ) {
-            Column(
-                modifier = Modifier
-                    .align(Alignment.CenterEnd)
-                    .fillMaxWidth(),
-                horizontalAlignment = Alignment.End,
-                verticalArrangement = Arrangement.Center,
-            ) {
+            if (expression.isNotBlank()) {
                 Text(
-                    text = if (expression.isBlank()) " " else expression,
-                    style = MaterialTheme.typography.bodyLarge,
+                    text = expression,
+                    style = MaterialTheme.typography.bodyMedium,
                     color = MaterialTheme.colorScheme.onSurfaceVariant,
                     maxLines = 1,
                     overflow = TextOverflow.Ellipsis,
                     textAlign = TextAlign.End,
                 )
-                Spacer(modifier = Modifier.height(6.dp))
-                Text(
-                    text = display,
-                    style = MaterialTheme.typography.displaySmall,
-                    color = if (error) MaterialTheme.colorScheme.error else MaterialTheme.colorScheme.onSurface,
-                    maxLines = 1,
-                    overflow = TextOverflow.Ellipsis,
-                    textAlign = TextAlign.End,
-                )
+                Spacer(modifier = Modifier.height(8.dp))
             }
+            Text(
+                text = display,
+                style = MaterialTheme.typography.displayMedium,
+                fontWeight = FontWeight.SemiBold,
+                color = if (error) MaterialTheme.colorScheme.error else MaterialTheme.colorScheme.onSurface,
+                maxLines = 1,
+                overflow = TextOverflow.Ellipsis,
+                textAlign = TextAlign.End,
+            )
         }
     }
 }
