@@ -99,27 +99,37 @@ private fun DisplayCard(
             containerColor = MaterialTheme.colorScheme.surfaceVariant.copy(alpha = 0.55f),
         ),
     ) {
-        Column(
-            modifier = Modifier.padding(24.dp),
-            horizontalAlignment = Alignment.End,
+        Box(
+            modifier = Modifier
+                .fillMaxWidth()
+                .height(180.dp)
+                .padding(24.dp),
         ) {
-            Text(
-                text = if (expression.isBlank()) " " else expression,
-                style = MaterialTheme.typography.bodyLarge,
-                color = MaterialTheme.colorScheme.onSurfaceVariant,
-                maxLines = 1,
-                overflow = TextOverflow.Ellipsis,
-                textAlign = TextAlign.End,
-            )
-            Spacer(modifier = Modifier.height(12.dp))
-            Text(
-                text = display,
-                style = MaterialTheme.typography.displaySmall,
-                color = if (error) MaterialTheme.colorScheme.error else MaterialTheme.colorScheme.onSurface,
-                maxLines = 1,
-                overflow = TextOverflow.Ellipsis,
-                textAlign = TextAlign.End,
-            )
+            Column(
+                modifier = Modifier
+                    .align(Alignment.BottomEnd)
+                    .fillMaxWidth(),
+                horizontalAlignment = Alignment.End,
+                verticalArrangement = Arrangement.Bottom,
+            ) {
+                Text(
+                    text = if (expression.isBlank()) " " else expression,
+                    style = MaterialTheme.typography.bodyLarge,
+                    color = MaterialTheme.colorScheme.onSurfaceVariant,
+                    maxLines = 1,
+                    overflow = TextOverflow.Ellipsis,
+                    textAlign = TextAlign.End,
+                )
+                Spacer(modifier = Modifier.height(10.dp))
+                Text(
+                    text = display,
+                    style = MaterialTheme.typography.displaySmall,
+                    color = if (error) MaterialTheme.colorScheme.error else MaterialTheme.colorScheme.onSurface,
+                    maxLines = 1,
+                    overflow = TextOverflow.Ellipsis,
+                    textAlign = TextAlign.End,
+                )
+            }
         }
     }
 }
@@ -127,9 +137,9 @@ private fun DisplayCard(
 @Composable
 private fun CalculatorPad(onAction: (CalculatorAction) -> Unit) {
     val rows = listOf(
-        listOf(ButtonSpec("7"), ButtonSpec("8"), ButtonSpec("9"), ButtonSpec("/", kind = ButtonKind.Operator)),
-        listOf(ButtonSpec("4"), ButtonSpec("5"), ButtonSpec("6"), ButtonSpec("*", kind = ButtonKind.Operator)),
-        listOf(ButtonSpec("1"), ButtonSpec("2"), ButtonSpec("3"), ButtonSpec("-", kind = ButtonKind.Operator)),
+        listOf(ButtonSpec("7"), ButtonSpec("8"), ButtonSpec("9"), ButtonSpec("÷", kind = ButtonKind.Operator, actionLabel = "/")),
+        listOf(ButtonSpec("4"), ButtonSpec("5"), ButtonSpec("6"), ButtonSpec("×", kind = ButtonKind.Operator, actionLabel = "*")),
+        listOf(ButtonSpec("1"), ButtonSpec("2"), ButtonSpec("3"), ButtonSpec("−", kind = ButtonKind.Operator, actionLabel = "-")),
         listOf(ButtonSpec("0", span = 2), ButtonSpec(".", kind = ButtonKind.Utility), ButtonSpec("+", kind = ButtonKind.Operator)),
         listOf(ButtonSpec("C", kind = ButtonKind.Utility), ButtonSpec("⌫", kind = ButtonKind.Utility), ButtonSpec("=", kind = ButtonKind.Equal)),
     )
@@ -158,6 +168,7 @@ private data class ButtonSpec(
     val label: String,
     val kind: ButtonKind = ButtonKind.Digit,
     val span: Int = 1,
+    val actionLabel: String = label,
 )
 
 @Composable
@@ -197,12 +208,12 @@ private fun CalculatorButton(
 
     Button(
         onClick = {
-            when (spec.label) {
+            when (spec.actionLabel) {
                 "C" -> onAction(CalculatorAction.Clear)
                 "⌫" -> onAction(CalculatorAction.Backspace)
-                "+", "-", "*", "/" -> onAction(CalculatorAction.Operation(spec.label))
+                "+", "-", "*", "/" -> onAction(CalculatorAction.Operation(spec.actionLabel))
                 "." -> onAction(CalculatorAction.Decimal)
-                else -> onAction(CalculatorAction.Digit(spec.label))
+                else -> onAction(CalculatorAction.Digit(spec.actionLabel))
             }
         },
         modifier = modifier,
