@@ -16,18 +16,21 @@ A small, privacy-friendly Android calculator built with Kotlin and Jetpack Compo
 The debug APK will be created at:
 `app/build/outputs/apk/debug/app-debug.apk`
 
-## Ready-made APK
-A copy of the current APK is also kept in the repo here:
+## Download
+Official release:
+- [v0.1.0](https://github.com/seb-labs/simplecalculator_test/releases/tag/v0.1.0)
+
+A copy of the APK is currently also kept in the repo here:
 `APK/simplecalculator-debug.apk`
 
 ## Install
-- Copy the APK to your phone and install it manually.
+- Download the APK from the GitHub Release and install it manually.
 - Or use `adb install -r app/build/outputs/apk/debug/app-debug.apk`.
 
 ## Notes
 - License: MIT
 - Minimum SDK: 24
-- Intended to stay F-Droid compatible
+- GitHub Releases are the preferred download path for published builds
 
 ## Contact
 `simplecalculator_test@seblabs.unbox.at`
