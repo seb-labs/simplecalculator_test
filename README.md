@@ -20,9 +20,6 @@ The debug APK will be created at:
 Official release:
 - [v0.1.0](https://github.com/seb-labs/simplecalculator_test/releases/tag/v0.1.0)
 
-A copy of the APK is currently also kept in the repo here:
-`APK/simplecalculator-debug.apk`
-
 ## Install
 - Download the APK from the GitHub Release and install it manually.
 - Or use `adb install -r app/build/outputs/apk/debug/app-debug.apk`.
