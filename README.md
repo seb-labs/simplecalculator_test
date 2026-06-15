@@ -28,3 +28,6 @@ A copy of the current APK is also kept in the repo here:
 - License: MIT
 - Minimum SDK: 24
 - Intended to stay F-Droid compatible
+
+## Contact
+`simplecalculator_test@seblabs.unbox.at`
