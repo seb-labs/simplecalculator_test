@@ -2,6 +2,10 @@
 
 A small, privacy-friendly Android calculator built with Kotlin and Jetpack Compose.
 
+## Screenshot
+
+![Simple Calculator app screenshot](docs/screenshots/simplecalculator-screenshot.png)
+
 ## Features
 - Basic arithmetic: addition, subtraction, multiplication, division
 - Clean, minimal interface
